@@ -1,5 +1,7 @@
 # Box
 
+- 详细介绍手机竖屏版请看[TVBoxOS-Mobile](https://github.com/kukuqi666/TVBoxOS-Mobile)仓库
+
 === Source Code - Editing the app default settings ===
 /src/main/java/com/github/tvbox/osc/base/App.java
 
