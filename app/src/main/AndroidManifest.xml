@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.github.tvbox.osc">
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />    
+
+    <queries>
+        <intent>
+            <action android:name=".ui.activity.AppsActivity" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".base.App"
+        android:allowBackup="true"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/app_icon"
+        android:banner="@drawable/app_banner"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:extractNativeLibs="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".ui.activity.HomeActivity"
+            android:screenOrientation="sensorLandscape"
+            android:exported="true"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.PlayActivity"
+            android:screenOrientation="sensorLandscape"
+            android:supportsPictureInPicture="true"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation" />
+        <activity
+            android:name=".ui.activity.DetailActivity"
+            android:screenOrientation="sensorLandscape"
+            android:supportsPictureInPicture="true"
+            android:launchMode="singleTask"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation" />
+        <activity
+            android:name=".ui.activity.HistoryActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name=".ui.activity.LivePlayActivity"
+            android:screenOrientation="sensorLandscape"
+            android:supportsPictureInPicture="true"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation" />
+        <activity
+            android:name=".ui.activity.CollectActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name=".ui.activity.PushActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name=".ui.activity.DriveActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name=".ui.activity.SearchActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name=".ui.activity.FastSearchActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="sensorLandscape" 
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation" />
+        <activity
+            android:name=".ui.activity.AppsActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name=".ui.activity.SettingActivity"
+            android:screenOrientation="sensorLandscape" />
+            
+        <service
+            android:name=".server.PlayService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />    
+
+        <receiver android:name=".receiver.SearchReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.content.movie.search.Action" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.DetailReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.content.movie.detail.Action" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.CustomWebReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.content.movie.custom.web.Action" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="1280" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="720" />
+
+        <meta-data
+            android:name="xwalk_enable_download_mode"
+            android:value="enable" />
+        <meta-data
+            android:name="xwalk_verify"
+            android:value="disable" />
+    </application>
+
+</manifest>

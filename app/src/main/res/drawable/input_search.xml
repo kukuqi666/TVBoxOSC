@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--获得焦点-->
+    <item android:state_focused="true">
+        <shape>
+            <corners android:radius="10mm" />
+            <stroke
+                android:width="@dimen/vs_2"
+                android:color="#FFFFFFFF" />
+        </shape>
+    </item>
+    <!--默认-->
+    <item android:state_focused="false">
+        <shape>
+            <corners android:radius="10mm" />
+            <stroke
+                android:width="@dimen/vs_2"
+                android:color="#99FFFFFF" />
+        </shape>
+    </item>
+</selector>

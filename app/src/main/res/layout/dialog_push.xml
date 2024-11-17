@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/vs_600"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_dialog_bg_main"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/vs_20"
+    android:paddingTop="@dimen/vs_10"
+    android:paddingRight="@dimen/vs_20"
+    android:paddingBottom="@dimen/vs_10">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/vs_10">
+
+            <TextView
+                android:layout_width="@dimen/vs_160"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/vs_20"
+                android:layout_marginRight="@dimen/vs_20"
+                android:gravity="center"
+                android:shadowColor="@color/color_000000_60"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="远端tvbox地址"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/ts_20"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etAddr"
+                android:layout_width="@dimen/vs_200"
+                android:layout_height="@dimen/vs_50"
+                android:layout_weight="1"
+                android:background="@drawable/shape_live_channel_num"
+                android:gravity="center"
+                android:hint="推送 IP 地址"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/vs_10"
+                android:paddingRight="@dimen/vs_10"
+                android:textColor="@color/color_FFFFFF"
+                android:textColorHint="@color/color_FFFFFF_50"
+                android:textSize="@dimen/ts_20" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/vs_10"
+                android:layout_marginLeft="@dimen/vs_10"
+                android:layout_marginEnd="@dimen/vs_10"
+                android:layout_marginRight="@dimen/vs_10"
+                android:gravity="center_vertical|end"
+                android:shadowColor="@color/color_000000_60"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text=":"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/ts_20"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etPort"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/vs_50"
+                android:layout_gravity="center|end"
+                android:layout_weight="1"
+                android:background="@drawable/shape_live_channel_num"
+                android:gravity="center"
+                android:hint="端口"
+                android:inputType="text"
+                android:maxLines="1"
+                android:nextFocusDown="@id/btnConfirm"
+                android:paddingLeft="@dimen/vs_10"
+                android:paddingRight="@dimen/vs_10"
+                android:shadowColor="@color/color_000000_60"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:textColor="@color/color_FFFFFF"
+                android:textColorHint="@color/color_FFFFFF_50"
+                android:textSize="@dimen/ts_20" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/vs_10">
+
+            <TextView
+                android:layout_width="@dimen/vs_160"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/vs_20"
+                android:layout_marginRight="@dimen/vs_20"
+                android:gravity="center"
+                android:shadowColor="@color/color_000000_60"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="当前 IP"
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/ts_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/etCurrent"
+                android:layout_width="@dimen/vs_200"
+                android:layout_height="@dimen/vs_50"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="center"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/vs_10"
+                android:paddingRight="@dimen/vs_10"
+                android:textColor="@color/color_FFFFFF"
+                android:textColorHint="@color/color_FFFFFF_50"
+                android:textSize="@dimen/ts_20" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/vs_10"
+                android:layout_marginLeft="@dimen/vs_10"
+                android:layout_marginEnd="@dimen/vs_10"
+                android:layout_marginRight="@dimen/vs_10"
+                android:gravity="center_vertical|end"
+                android:shadowColor="@color/color_000000_60"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text=""
+                android:textColor="@color/color_FFFFFF"
+                android:textSize="@dimen/ts_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/vs_50"
+                android:layout_gravity="center|end"
+                android:layout_weight="1"
+                android:background="@drawable/button_dialog_main"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:maxLines="1"
+                android:nextFocusDown="@id/btnConfirm"
+                android:paddingLeft="@dimen/vs_10"
+                android:paddingRight="@dimen/vs_10"
+                android:shadowColor="@color/color_000000_60"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="推送"
+                android:textColor="@color/color_FFFFFF"
+                android:textColorHint="@color/color_FFFFFF_50"
+                android:textSize="@dimen/ts_20" />
+
+            <TextView
+                android:id="@+id/btnCancel"
+                android:layout_width="@dimen/vs_120"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button_dialog_main"
+                android:focusable="true"
+                android:gravity="center"
+                android:padding="@dimen/vs_10"
+                android:text="To-Do"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/vs_20"
+                android:visibility="gone" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
